@@ -111,12 +111,12 @@ class Meow_MWL_Core {
 		// CSS
     $physical_file = MWL_PATH . '/app/style.min.css';
     $cache_buster = file_exists( $physical_file ) ? filemtime( $physical_file ) : MWL_VERSION;
-    wp_enqueue_style( 'leaflet-css', plugins_url( '/app/style.min.css', __DIR__ ), null, $cache_buster );
+    wp_enqueue_style( 'leaflet-css', plugins_url( '/app/style-pro.min.css', __DIR__ ), null, $cache_buster );
 
 		// Touchswipe
 		$physical_file = MWL_PATH . '/app/touchswipe.min.js';
     $cache_buster = file_exists( $physical_file ) ? filemtime( $physical_file ) : MWL_VERSION;
-    // wp_enqueue_script( 'touchswipe-js', plugins_url( '/app/touchswipe.min.js', __DIR__ ), array('jquery'), $cache_buster, false );
+    wp_enqueue_script( 'touchswipe-js', plugins_url( '/app/touchswipe.min.js', __DIR__ ), array('jquery'), $cache_buster, false );
 
 		// JS
 		$physical_file = MWL_PATH . '/app/lightbox.js';
@@ -142,7 +142,7 @@ class Meow_MWL_Core {
 					'right_click_protection' => !$this->get_option( 'right_click', false ),
 					'magnification' => $this->get_option( 'magnification', true ),
 					'anti_selector' => $this->get_option( 'anti_selector', '.blog, .archive, .emoji, .attachment-post-image, .no-lightbox' ),
-					'preloading' => $this->get_option( 'preloading', false ),
+					'preloading' => $this->get_option( 'preloading', true ),
 					'download_link' => $this->get_option( 'download_link', false ),
 					'caption_source' => $this->get_option( 'caption_origin', 'caption' ),
 					'caption_ellipsis' => $this->get_option( 'caption_ellipsis', true ),
@@ -160,17 +160,17 @@ class Meow_MWL_Core {
 						'keywords' => $this->get_option( 'exif_keywords', false ),
 					),
 					'slideshow' => array(
-						'enabled' => $this->get_option( 'slideshow', false ),
+						'enabled' => $this->get_option( 'slideshow', true ),
 						'timer' => $this->get_option( 'slideshow_timer', 3000 )
 					),
 					'map' => array(
-						'enabled' => $this->get_option( 'map', false ),
-						// 'engine' => $this->get_option( 'map_engine', 'googlemaps' ),
-						// 'api_key' => $this->get_option( 'map_api_key', "" ),
-						// 'style' => json_decode( $this->get_option( 'map_style', null ) )
-						// 'position' => $this->get_option( 'map_position', 'bottom-right' ),
-						// 'margin' => (int)$this->get_option( 'map_margin', 10 ),
-						// 'size' => (int)$this->get_option( 'map_size', 70 )
+						'enabled' => $this->get_option( 'map', true ),
+						'engine' => $this->get_option( 'map_engine', 'googlemaps' ),
+						'api_key' => $this->get_option( 'map_api_key', "" ),
+						'style' => json_decode( $this->get_option( 'map_style', null ) )
+						'position' => $this->get_option( 'map_position', 'bottom-right' ),
+						'margin' => (int)$this->get_option( 'map_margin', 10 ),
+						'size' => (int)$this->get_option( 'map_size', 70 )
 					)
 				)
 			)
