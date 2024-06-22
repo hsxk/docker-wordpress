@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "haokexin/image-with-map",
+	"version": "0.1.0",
+	"title": "Image Map",
+	"category": "media",
+	"icon": "location",
+	"description": "Show image with Map",
+	"example": {},
+	"attributes": {
+		"fallbackCurrentYear": {
+			"type": "string"
+		},
+		"showStartingYear": {
+			"type": "boolean"
+		},
+		"startingYear": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"interactivity": true,
+		"align": [ "left", "center", "right", "wide", "full" ],
+		"anchor": true,
+		"color": {
+			"text": false,
+			"background": false
+		},
+		"filter": {
+			"duotone": true
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"width": true,
+			"__experimentalSkipSerialization": true,
+			"__experimentalDefaultControls": {
+				"color": true,
+				"radius": true,
+				"width": true
+			}
+		},
+		"shadow": {
+			"__experimentalSkipSerialization": true
+		}
+	},
+	"textdomain": "image-with-map",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}
